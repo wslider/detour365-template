@@ -12,6 +12,9 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position:relative;
+    display:flexbox;
+    flex-direction: column;
 }
 
 h1, h2 {
@@ -21,23 +24,25 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 2.2em;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2rem;
     margin-top: 30px;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    text-align: justify;
     gap: 20px;
 }
 
 label {
     font-weight: bold;
+    font-size:2rem;
     color: #333; /* Dark gray for readability */
     margin-bottom: 5px;
 }

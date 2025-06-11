@@ -12,7 +12,7 @@ document.getElementById('episodeForm').addEventListener('submit', function(event
     const keyPoints = document.getElementById('keyPoints').value;
     const prayer = document.getElementById('prayer').value;
 
-    // Format the date
+// Format the date
     const date = new Date(dateRecorded).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',

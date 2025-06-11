@@ -10,31 +10,41 @@
     <div class="container">
         <h1>Detour 365 Episode Template Maker</h1>
         <form id="episodeForm">
+            <div>
             <label for="episodeNumber">Episode Number:</label>
             <input type="number" id="episodeNumber" name="episodeNumber" required>
-
+            </div>
+            <div>
             <label for="episodeTitle">Episode Title:</label>
             <input type="text" id="episodeTitle" name="episodeTitle" required>
-
+            </div>
+            <div>
             <label for="passages">Scripture Passages:</label>
             <textarea id="passages" name="passages" rows="4" required placeholder="e.g., John 3:16, Psalm 23"></textarea>
-
+            </div>
+            <div>
             <label for="dateRecorded">Date Recorded:</label>
             <input type="date" id="dateRecorded" name="dateRecorded" required>
-
+            </div>
+            <div>
             <label for="theme">Theme or Key Message:</label>
             <input type="text" id="theme" name="theme" placeholder="e.g., Faith in Trials">
-
+            </div>
+            <div>
             <label for="guest">Guest Speaker (if any):</label>
             <input type="text" id="guest" name="guest" placeholder="e.g., Pastor John Smith">
-
+            </div>
+            <div>
             <label for="keyPoints">Key Points or Summary:</label>
             <textarea id="keyPoints" name="keyPoints" rows="4" placeholder="e.g., Discussed perseverance, God's love"></textarea>
-
-            <label for="prayer">Closing Prayer or Reflection:</label>
+            </div>
+            <div>
+            <label for="prayer">Application & Reflection:</label>
             <textarea id="prayer" name="prayer" rows="4" placeholder="e.g., Prayer for strength"></textarea>
-
+            </div>
+            <div>
             <button type="submit">Generate Template</button>
+            </div>
         </form>
 
         <div id="output">
