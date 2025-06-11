@@ -3,51 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detour 365 Episode Template Maker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>Detour 365 Episode Template</header>
-    <main>
+    <div class="container">
+        <h1>Detour 365 Episode Template Maker</h1>
         <form id="episodeForm">
-            <div >
-                <label></label>
-                <input>
-            </div>
-            <div >
-                <label></label>
-                <input>
-            </div>
-            <div >
-                <label></label>
-                <input>
-            </div>
-            <div >
-                <label></label>
-                <input>
-            </div>
-            <div >
-                <label></label>
-                <input>
-            </div>
-            <div >
-                <label></label>
-                <input>
-            </div>
-            <div >
-                <label></label>
-                <input>
-            </div>
-            <div >
-                <label></label>
-                <input>
-            </div>
+            <label for="episodeNumber">Episode Number:</label>
+            <input type="number" id="episodeNumber" name="episodeNumber" required>
+
+            <label for="episodeTitle">Episode Title:</label>
+            <input type="text" id="episodeTitle" name="episodeTitle" required>
+
+            <label for="passages">Scripture Passages:</label>
+            <textarea id="passages" name="passages" rows="4" required placeholder="e.g., John 3:16, Psalm 23"></textarea>
+
+            <label for="dateRecorded">Date Recorded:</label>
+            <input type="date" id="dateRecorded" name="dateRecorded" required>
+
+            <label for="theme">Theme or Key Message:</label>
+            <input type="text" id="theme" name="theme" placeholder="e.g., Faith in Trials">
+
+            <label for="guest">Guest Speaker (if any):</label>
+            <input type="text" id="guest" name="guest" placeholder="e.g., Pastor John Smith">
+
+            <label for="keyPoints">Key Points or Summary:</label>
+            <textarea id="keyPoints" name="keyPoints" rows="4" placeholder="e.g., Discussed perseverance, God's love"></textarea>
+
+            <label for="prayer">Closing Prayer or Reflection:</label>
+            <textarea id="prayer" name="prayer" rows="4" placeholder="e.g., Prayer for strength"></textarea>
+
+            <button type="submit">Generate Template</button>
         </form>
-        <form id="youtubeDescription">
-            <div>
-                <label></label>
-                <input>
-            </div>
-        </form>
-    </main>
+
+        <div id="output">
+            <h2>Generated Episode Template</h2>
+            <pre id="templateOutput"></pre>
+            <button id="copyButton">Copy to Clipboard</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
