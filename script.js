@@ -7,6 +7,7 @@ document.getElementById('episodeForm').addEventListener('submit', function(event
     const episodeTitle = document.getElementById('episodeTitle').value;
     const passages = document.getElementById('passages').value;
     const dateRecorded = document.getElementById('dateRecorded').value;
+    const series = document.getElementById('series').value;
     const theme = document.getElementById('theme').value;
     const guest = document.getElementById('guest').value;
     const keyPoints = document.getElementById('keyPoints').value;
@@ -24,6 +25,7 @@ document.getElementById('episodeForm').addEventListener('submit', function(event
 Detour 365 - Episode ${episodeNumber}: ${episodeTitle}
 Date Recorded: ${date}
 Scripture Passages: ${passages}
+${series ? `Series: ${series}` : ''}
 ${theme ? `Theme: ${theme}` : ''}
 ${guest ? `Guest Speaker: ${guest}` : ''}
 ${keyPoints ? `Key Points:\n${keyPoints}` : ''}
@@ -35,6 +37,7 @@ ${prayer ? `Closing Prayer:\n${prayer}` : ''}
 <strong>Detour 365 - Episode ${episodeNumber}: ${episodeTitle}</strong>
 <strong>Date Recorded:</strong> ${date}
 <strong>Scripture Passages:</strong> ${passages}
+${series ? `<strong>Series:</strong> ${series}` : ''}
 ${theme ? `<strong>Theme:</strong> ${theme}` : ''}
 ${guest ? `<strong>Guest Speaker:</strong> ${guest}` : ''}
 ${keyPoints ? `<strong>Key Points:</strong>\n${keyPoints}` : ''}
@@ -75,6 +78,7 @@ window.addEventListener('load', function() {
             .replace(/^Detour 365 - Episode.*$/m, '<strong>$&</strong>')
             .replace(/^Date Recorded:.*$/m, '<strong>Date Recorded:</strong> $&'.replace('Date Recorded: ', ''))
             .replace(/^Scripture Passages:.*$/m, '<strong>Scripture Passages:</strong> $&'.replace('Scripture Passages: ', ''))
+            .replace(/^Series:.*$/m, '<strong>Series:</strong> $&'.replace('Series: ', ''))
             .replace(/^Theme:.*$/m, '<strong>Theme:</strong> $&'.replace('Theme: ', ''))
             .replace(/^Guest Speaker:.*$/m, '<strong>Guest Speaker:</strong> $&'.replace('Guest Speaker: ', ''))
             .replace(/^Key Points:.*$/m, '<strong>Key Points:</strong>\n$&'.replace('Key Points: ', ''))
