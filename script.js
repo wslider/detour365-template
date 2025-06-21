@@ -11,7 +11,8 @@ document.getElementById('episodeForm').addEventListener('submit', function(event
     const theme = document.getElementById('theme').value;
     const hosts = document.getElementById('hosts').value;
     // add in scriptures 
-    const scriptures = 
+    const scriptures = document.getElementById('scriptures').value;
+
     const keyPoints = document.getElementById('keyPoints').value;
     const prayer = document.getElementById('prayer').value;
 
@@ -29,7 +30,8 @@ Date Recorded: ${date}
 Scripture Passages: ${passages}
 ${series ? `Series: ${series}` : ''}
 ${theme ? `Theme: ${theme}` : ''}
-${hosts ? `hosts Speaker: ${hosts}` : ''}
+${hosts ? `Hosts: ${hosts}` : ''}
+${scriptures ? `Scriptures: ${scriptures}` : ''}
 ${keyPoints ? `Key Points:\n${keyPoints}` : ''}
 ${prayer ? `Closing Prayer:\n${prayer}` : ''}
 ----------------------------------------`;
@@ -41,7 +43,8 @@ ${prayer ? `Closing Prayer:\n${prayer}` : ''}
 <strong>Scripture Passages:</strong> ${passages}
 ${series ? `<strong>Series:</strong> ${series}` : ''}
 ${theme ? `<strong>Theme:</strong> ${theme}` : ''}
-${hosts ? `<strong>hosts Speaker:</strong> ${hosts}` : ''}
+${hosts ? `<strong>Hosts:</strong> ${hosts}` : ''}
+${scriptures ? `<strong>Scriptures:</strong> ${scriptures}` : ''}
 ${keyPoints ? `<strong>Key Points:</strong>\n${keyPoints}` : ''}
 ${prayer ? `<strong>Closing Prayer:</strong>\n${prayer}` : ''}
 <strong>----------------------------------------</strong>`;
@@ -82,7 +85,8 @@ window.addEventListener('load', function() {
             .replace(/^Scripture Passages:.*$/m, '<strong>Scripture Passages:</strong> $&'.replace('Scripture Passages: ', ''))
             .replace(/^Series:.*$/m, '<strong>Series:</strong> $&'.replace('Series: ', ''))
             .replace(/^Theme:.*$/m, '<strong>Theme:</strong> $&'.replace('Theme: ', ''))
-            .replace(/^hosts Speaker:.*$/m, '<strong>hosts Speaker:</strong> $&'.replace('hosts Speaker: ', ''))
+            .replace(/^Hosts:.*$/m, '<strong>Hosts:</strong> $&'.replace('Hosts: ', ''))
+            .replace(/^Scriptures:.*$/m, '<strong>Scriptures:</strong> $&'.replace('Scriptures: ', ''))
             .replace(/^Key Points:.*$/m, '<strong>Key Points:</strong>\n$&'.replace('Key Points: ', ''))
             .replace(/^Closing Prayer:.*$/m, '<strong>Closing Prayer:</strong>\n$&'.replace('Closing Prayer: ', ''))
             .replace(/^----------------------------------------$/m, '<strong>----------------------------------------</strong>');
