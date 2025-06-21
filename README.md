@@ -1,9 +1,13 @@
 # detour365-template
+
+Allow fields for easy input
+Print to the console for easy copy and paste 
+
 Detour 365 Episode Notes
     Episode #
     Title
     Passages
-    Hosts / Guests
+    hostss / hostss
     Recorded Live On: 
     Big Idea:
     Context:
@@ -17,7 +21,7 @@ Detour 365 Episode - Spotify Description
     Episode #
     Title
     Passages
-    Hosts / Guests
+    hostss / hostss
     Recorded Live On: 
     Big Idea:
     # Tags: 
