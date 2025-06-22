@@ -45,6 +45,7 @@ label {
     font-size:2rem;
     color: #333; /* Dark gray for readability */
     margin-bottom: 5px;
+    max-width: 50vw; 
 }
 
 input, textarea {
@@ -103,4 +104,9 @@ pre#templateOutput strong {
     margin-top: 15px;
     width: 160px;
     display: none;
+}
+
+/* Media Query with Mobile Breakpoint */
+@media only screen and (max-width:600px) {
+    label {max-width: 100vw;}
 }
