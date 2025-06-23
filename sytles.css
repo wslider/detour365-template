@@ -92,16 +92,19 @@ button:hover {
 pre#templateOutput {
     font-family: 'Georgia', serif;
     font-size: 16px;
-    white-space: pre-wrap; /* Allows wrapping */
+    white-space: pre-wrap; /* Allows wrapping of text */
     background-color: #fff;
     padding: 15px;
     border: 1px solid #556B2F; /* Olive green border */
     border-radius: 5px;
     line-height: 1.6;
     color: #333; /* Dark gray text */
-    max-width: 100%; /* Adjusted for flexibility */
-    text-align: justify;
-    word-wrap: break-word; /* Prevents overflow */
+    max-width: 100%; /* Ensures it fits the container */
+    width: 100%; /* Ensures full width */
+    overflow-wrap: break-word; /* Breaks long words */
+    word-break: break-all; /* Breaks words at any character if needed */
+    text-align: justify; /* Justifies text */
+    box-sizing: border-box; /* Includes padding in width calculation */
 }
 
 pre#templateOutput strong {
