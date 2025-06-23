@@ -5,19 +5,19 @@ Print to the console for easy copy and paste
 
 Detour 365 Episode Notes
     Episode #
-    Title
-    Passages
-    hostss / hostss
+    Title:
+    Passages:
+    Hosts: 
     Recorded Live On: 
     Big Idea:
     Context:
-    Passage (Full Scripture) 
-    Main Points 
+    Passages (Full Text) :  
+    Main Point
+    Sub-Points and Notes :
     Applications & Reflection
     Prayer Requests
 
-Detour 365 Episode - Youtube Description
-Detour 365 Episode - Spotify Description
+Detour 365 Episode - Youtube Description & Spotify Description
     Episode #
     Title
     Passages
