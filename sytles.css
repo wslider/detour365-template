@@ -13,8 +13,11 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    display: flex; /* Corrected from flexbox to flex */
+    display: flex;
     flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1, h2 {
@@ -85,8 +88,9 @@ button:hover {
     border-radius: 5px;
     background-color: #fafaf5; /* Very light cream */
     max-width: 100%; /* Adjusted for flexibility */
+    width: 100%; /* Ensures full width */
     text-align: justify;
-    word-wrap: break-word; /* Prevents overflow */
+    box-sizing: border-box;
 }
 
 pre#templateOutput {
@@ -102,7 +106,7 @@ pre#templateOutput {
     max-width: 100%; /* Ensures it fits the container */
     width: 100%; /* Ensures full width */
     overflow-wrap: break-word; /* Breaks long words */
-    word-break: break-all; /* Breaks words at any character if needed */
+    word-break: break-word; /* Breaks words at word boundaries */
     text-align: justify; /* Justifies text */
     box-sizing: border-box; /* Includes padding in width calculation */
 }
@@ -110,6 +114,7 @@ pre#templateOutput {
 pre#templateOutput strong {
     font-weight: bold;
     color: #2F4F4F; /* Dark forest green for bold titles */
+    display: block; /* Ensures each strong element starts on a new line */
     text-align: justify;
 }
 

@@ -10,13 +10,11 @@ document.getElementById('episodeForm').addEventListener('submit', function(event
     const series = document.getElementById('series').value;
     const theme = document.getElementById('theme').value;
     const hosts = document.getElementById('hosts').value;
-    // add in scriptures 
-    const scriptures = document.getElementById('scriptures').value;
-
+    const scriptures = document.getElementById('scriptures').value.replace(/\n/g, '<br>'); // Convert newlines to <br> for HTML
     const keyPoints = document.getElementById('keyPoints').value;
     const prayer = document.getElementById('prayer').value;
 
-// Format the date
+    // Format the date
     const date = new Date(dateRecorded).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
@@ -31,7 +29,7 @@ Scripture Passages: ${passages}
 ${series ? `Series: ${series}` : ''}
 ${theme ? `Theme: ${theme}` : ''}
 ${hosts ? `Hosts: ${hosts}` : ''}
-${scriptures ? `Scriptures: ${scriptures}` : ''}
+${scriptures ? `Scriptures: ${scriptures.replace(/<br>/g, '\n')}` : ''}
 ${keyPoints ? `Key Points:\n${keyPoints}` : ''}
 ${prayer ? `Closing Prayer:\n${prayer}` : ''}
 ----------------------------------------`;
@@ -45,8 +43,8 @@ ${series ? `<strong>Series:</strong> ${series}` : ''}
 ${theme ? `<strong>Theme:</strong> ${theme}` : ''}
 ${hosts ? `<strong>Hosts:</strong> ${hosts}` : ''}
 ${scriptures ? `<strong>Scriptures:</strong> ${scriptures}` : ''}
-${keyPoints ? `<strong>Key Points:</strong>\n${keyPoints}` : ''}
-${prayer ? `<strong>Closing Prayer:</strong>\n${prayer}` : ''}
+${keyPoints ? `<strong>Key Points:</strong><br>${keyPoints.replace(/\n/g, '<br>')}` : ''}
+${prayer ? `<strong>Closing Prayer:</strong><br>${prayer.replace(/\n/g, '<br>')}` : ''}
 <strong>----------------------------------------</strong>`;
 
     // Display the HTML template
@@ -66,7 +64,7 @@ ${prayer ? `<strong>Closing Prayer:</strong>\n${prayer}` : ''}
 
 // Copy to clipboard (plain text for Word compatibility)
 document.getElementById('copyButton').addEventListener('click', function() {
-    const plainTemplate = localStorage.getItem('lastTemplate') || document.getElementById('templateOutput').textContent;
+    const plainTemplate = localStorage.getItem('lastTemplate') || document.getElementById('templateOutput').textContent.replace(/<br>/g, '\n');
     navigator.clipboard.writeText(plainTemplate).then(() => {
         alert('Template copied to clipboard!');
     }).catch(err => {
@@ -87,9 +85,10 @@ window.addEventListener('load', function() {
             .replace(/^Theme:.*$/m, '<strong>Theme:</strong> $&'.replace('Theme: ', ''))
             .replace(/^Hosts:.*$/m, '<strong>Hosts:</strong> $&'.replace('Hosts: ', ''))
             .replace(/^Scriptures:.*$/m, '<strong>Scriptures:</strong> $&'.replace('Scriptures: ', ''))
-            .replace(/^Key Points:.*$/m, '<strong>Key Points:</strong>\n$&'.replace('Key Points: ', ''))
-            .replace(/^Closing Prayer:.*$/m, '<strong>Closing Prayer:</strong>\n$&'.replace('Closing Prayer: ', ''))
-            .replace(/^----------------------------------------$/m, '<strong>----------------------------------------</strong>');
+            .replace(/^Key Points:.*$/m, '<strong>Key Points:</strong><br>$&'.replace('Key Points: ', ''))
+            .replace(/^Closing Prayer:.*$/m, '<strong>Closing Prayer:</strong><br>$&'.replace('Closing Prayer: ', ''))
+            .replace(/^----------------------------------------$/m, '<strong>----------------------------------------</strong>')
+            .replace(/\n/g, '<br>'); // Convert newlines to <br> for HTML display
         document.getElementById('templateOutput').innerHTML = htmlTemplate;
         document.getElementById('copyButton').style.display = 'block';
     }
