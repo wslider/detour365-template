@@ -9,60 +9,114 @@
 <body>
     <div class="container">
         <h1>Detour 365 Episode Template Maker</h1>
+        <h2>Forest / Hiking Trail Theme</h2>
+
+        <!-- Episode Notes Form -->
         <form id="episodeForm">
+            <h3>Detour 365 Episode Notes</h3>
             <div>
-            <label for="episodeNumber">Episode Number:</label>
-            <input type="number" id="episodeNumber" name="episodeNumber" required>
+                <label for="episodeNumber">Episode #:</label>
+                <input type="number" id="episodeNumber" name="episodeNumber" required>
             </div>
             <div>
-            <label for="episodeTitle">Episode Title:</label>
-            <input type="text" id="episodeTitle" name="episodeTitle" required>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
             </div>
             <div>
-            <label for="passages">Scripture Passages:</label>
-            <textarea id="passages" name="passages" rows="4" required placeholder="e.g., John 3:16, Psalm 23"></textarea>
+                <label for="passages">Passages:</label>
+                <textarea id="passages" name="passages" rows="2" required placeholder="e.g., John 3:16, Psalm 23"></textarea>
             </div>
             <div>
-            <label for="dateRecorded">Date Recorded:</label>
-            <input type="date" id="dateRecorded" name="dateRecorded" required>
-            </div>
-
-            <div>
-            <label for="series">Series:</label>
-            <input type="text" id="series" name="series" placeholder="e.g., Humanity of God">
-            </div>
-
-            <div>
-            <label for="theme">Theme or Key Message:</label>
-            <input type="text" id="theme" name="theme" placeholder="e.g., Faith in Trials">
+                <label for="hosts">Hosts:</label>
+                <input type="text" id="hosts" name="hosts" placeholder="e.g., Pastor John Smith">
             </div>
             <div>
-            <label for="hosts">Hosts:</label>
-            <input type="text" id="hosts" name="hosts" placeholder="e.g., Pastor John Smith">
-            </div>
-        
-             <div>
-            <label for="scriptures">:</label>
-            <textarea id="scriptures" name="scriptures" rows="4" placeholder="copy and paste full text of scriptures"></textarea>
-            </div>
-
-            <div>
-            <label for="keyPoints">Key Points or Summary:</label>
-            <textarea id="keyPoints" name="keyPoints" rows="4" placeholder="e.g., Discussed perseverance, God's love"></textarea>
+                <label for="recordedLive">Recorded Live On:</label>
+                <input type="date" id="recordedLive" name="recordedLive" required>
             </div>
             <div>
-            <label for="prayer">Application & Reflection:</label>
-            <textarea id="prayer" name="prayer" rows="4" placeholder="e.g., Prayer for strength"></textarea>
+                <label for="bigIdea">Big Idea:</label>
+                <input type="text" id="bigIdea" name="bigIdea" placeholder="e.g., Faith in Trials">
             </div>
             <div>
+                <label for="context">Context:</label>
+                <textarea id="context" name="context" rows="2" placeholder="e.g., Background of the passage"></textarea>
+            </div>
+            <div>
+                <label for="fullText">Passages (Full Text):</label>
+                <textarea id="fullText" name="fullText" rows="6" placeholder="Copy and paste full scripture text"></textarea>
+            </div>
+            <div>
+                <label for="mainPoint">Main Point:</label>
+                <textarea id="mainPoint" name="mainPoint" rows="2" placeholder="e.g., Perseverance in faith"></textarea>
+            </div>
+            <div>
+                <label for="subPoints">Sub-Points and Notes:</label>
+                <textarea id="subPoints" name="subPoints" rows="4" placeholder="e.g., Key insights, notes"></textarea>
+            </div>
+            <div>
+                <label for="application">Applications & Reflection:</label>
+                <textarea id="application" name="application" rows="4" placeholder="e.g., Practical steps"></textarea>
+            </div>
+            <div>
+                <label for="prayerRequests">Prayer Requests:</label>
+                <textarea id="prayerRequests" name="prayerRequests" rows="4" placeholder="e.g., Strength for listeners"></textarea>
+            </div>
             <button type="submit">Generate Template</button>
-            </div>
         </form>
 
+        <!-- YouTube & Spotify Description Form -->
+        <form id="descriptionForm">
+            <h3>Detour 365 Episode - YouTube & Spotify Description</h3>
+            <div>
+                <label for="descEpisodeNumber">Episode #:</label>
+                <input type="number" id="descEpisodeNumber" name="descEpisodeNumber" required>
+            </div>
+            <div>
+                <label for="descTitle">Title:</label>
+                <input type="text" id="descTitle" name="descTitle" required>
+            </div>
+            <div>
+                <label for="descPassages">Passages:</label>
+                <textarea id="descPassages" name="descPassages" rows="2" required placeholder="e.g., John 3:16, Psalm 23"></textarea>
+            </div>
+            <div>
+                <label for="descHosts">Hosts:</label>
+                <input type="text" id="descHosts" name="descHosts" placeholder="e.g., Pastor John Smith">
+            </div>
+            <div>
+                <label for="descRecordedLive">Recorded Live On:</label>
+                <input type="date" id="descRecordedLive" name="descRecordedLive" required>
+            </div>
+            <div>
+                <label for="descBigIdea">Big Idea:</label>
+                <input type="text" id="descBigIdea" name="descBigIdea" placeholder="e.g., Faith in Trials">
+            </div>
+            <div>
+                <label for="tags">Tags:</label>
+                <input type="text" id="tags" name="tags" placeholder="e.g., #faith, #prayer">
+            </div>
+            <button type="submit">Generate Description</button>
+        </form>
+
+        <!-- Output Section -->
         <div id="output">
-            <h2>Generated Episode Template</h2>
-            <pre id="templateOutput"></pre>
+            <h2>Generated Output</h2>
+            <div id="templateOutput"></div>
             <button id="copyButton">Copy to Clipboard</button>
+        </div>
+
+        <!-- Checklist -->
+        <div id="checklist">
+            <h3>Checklist - Print Out</h3>
+            <ul>
+                <li>Theme: Forest / Hiking Trail (Detour Theme)</li>
+                <li>Record audio</li>
+                <li>Edit video</li>
+                <li>Upload to YouTube</li>
+                <li>Publish to Spotify</li>
+                <li>Update social media</li>
+            </ul>
         </div>
     </div>
     <script src="script.js"></script>

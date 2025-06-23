@@ -21,7 +21,7 @@ Detour 365 Episode - Youtube Description & Spotify Description
     Episode #
     Title
     Passages
-    hostss / hostss
+    Hosts: 
     Recorded Live On: 
     Big Idea:
     # Tags: 

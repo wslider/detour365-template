@@ -1,95 +1,88 @@
-// script.js
 document.getElementById('episodeForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Get form values
+    // Get form values for Episode Notes
     const episodeNumber = document.getElementById('episodeNumber').value;
-    const episodeTitle = document.getElementById('episodeTitle').value;
+    const title = document.getElementById('title').value;
     const passages = document.getElementById('passages').value;
-    const dateRecorded = document.getElementById('dateRecorded').value;
-    const series = document.getElementById('series').value;
-    const theme = document.getElementById('theme').value;
     const hosts = document.getElementById('hosts').value;
-    const scriptures = document.getElementById('scriptures').value.replace(/\n/g, '<br>'); // Convert newlines to <br> for HTML
-    const keyPoints = document.getElementById('keyPoints').value;
-    const prayer = document.getElementById('prayer').value;
-
-    // Format the date
-    const date = new Date(dateRecorded).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+    const recordedLive = new Date(document.getElementById('recordedLive').value).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
     });
+    const bigIdea = document.getElementById('bigIdea').value;
+    const context = document.getElementById('context').value;
+    const fullText = document.getElementById('fullText').value.replace(/\n/g, '<br>');
+    const mainPoint = document.getElementById('mainPoint').value;
+    const subPoints = document.getElementById('subPoints').value.replace(/\n/g, '<br>');
+    const application = document.getElementById('application').value.replace(/\n/g, '<br>');
+    const prayerRequests = document.getElementById('prayerRequests').value.replace(/\n/g, '<br>');
 
-    // Generate the template (plain text for copying)
-    const plainTemplate = `
-Detour 365 - Episode ${episodeNumber}: ${episodeTitle}
-Date Recorded: ${date}
-Scripture Passages: ${passages}
-${series ? `Series: ${series}` : ''}
-${theme ? `Theme: ${theme}` : ''}
-${hosts ? `Hosts: ${hosts}` : ''}
-${scriptures ? `Scriptures: ${scriptures.replace(/<br>/g, '\n')}` : ''}
-${keyPoints ? `Key Points:\n${keyPoints}` : ''}
-${prayer ? `Closing Prayer:\n${prayer}` : ''}
-----------------------------------------`;
-
-    // Generate HTML template for display with bold titles
-    const htmlTemplate = `
-<strong>Detour 365 - Episode ${episodeNumber}: ${episodeTitle}</strong>
-<strong>Date Recorded:</strong> ${date}
-<strong>Scripture Passages:</strong> ${passages}
-${series ? `<strong>Series:</strong> ${series}` : ''}
-${theme ? `<strong>Theme:</strong> ${theme}` : ''}
-${hosts ? `<strong>Hosts:</strong> ${hosts}` : ''}
-${scriptures ? `<strong>Scriptures:</strong> ${scriptures}` : ''}
-${keyPoints ? `<strong>Key Points:</strong><br>${keyPoints.replace(/\n/g, '<br>')}` : ''}
-${prayer ? `<strong>Closing Prayer:</strong><br>${prayer.replace(/\n/g, '<br>')}` : ''}
+    // Generate Episode Notes template
+    const episodeNotesTemplate = `
+<strong>Detour 365 Episode Notes</strong>
+<strong>Episode #:</strong> ${episodeNumber}
+<strong>Title:</strong> ${title}
+<strong>Passages:</strong> ${passages}
+<strong>Hosts:</strong> ${hosts}
+<strong>Recorded Live On:</strong> ${recordedLive}
+<strong>Big Idea:</strong> ${bigIdea}
+<strong>Context:</strong> ${context}
+<strong>Passages (Full Text):</strong> ${fullText}
+<strong>Main Point:</strong> ${mainPoint}
+<strong>Sub-Points and Notes:</strong><br>${subPoints}
+<strong>Applications & Reflection:</strong><br>${application}
+<strong>Prayer Requests:</strong><br>${prayerRequests}
 <strong>----------------------------------------</strong>`;
 
-    // Display the HTML template
-    const outputElement = document.getElementById('templateOutput');
-    outputElement.innerHTML = htmlTemplate;
+    // Log to console for copy-paste
+    console.log('=== Detour 365 Episode Notes ===\n' + episodeNotesTemplate.replace(/<br>/g, '\n').replace(/<\/?strong>/g, ''));
 
-    // Log plain text to console
-    console.log(plainTemplate);
-
-    // Show copy button
-    const copyButton = document.getElementById('copyButton');
-    copyButton.style.display = 'block';
-
-    // Store in localStorage
-    localStorage.setItem('lastTemplate', plainTemplate);
+    // Display in output
+    document.getElementById('templateOutput').innerHTML = episodeNotesTemplate;
+    document.getElementById('copyButton').style.display = 'block';
 });
 
-// Copy to clipboard (plain text for Word compatibility)
+document.getElementById('descriptionForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form values for YouTube & Spotify Description
+    const descEpisodeNumber = document.getElementById('descEpisodeNumber').value;
+    const descTitle = document.getElementById('descTitle').value;
+    const descPassages = document.getElementById('descPassages').value;
+    const descHosts = document.getElementById('descHosts').value;
+    const descRecordedLive = new Date(document.getElementById('descRecordedLive').value).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+    });
+    const descBigIdea = document.getElementById('descBigIdea').value;
+    const tags = document.getElementById('tags').value;
+
+    // Generate Description template
+    const descriptionTemplate = `
+<strong>Detour 365 Episode - YouTube & Spotify Description</strong>
+<strong>Episode #:</strong> ${descEpisodeNumber}
+<strong>Title:</strong> ${descTitle}
+<strong>Passages:</strong> ${descPassages}
+<strong>Hosts:</strong> ${descHosts}
+<strong>Recorded Live On:</strong> ${descRecordedLive}
+<strong>Big Idea:</strong> ${descBigIdea}
+<strong># Tags:</strong> ${tags}
+<strong>----------------------------------------</strong>`;
+
+    // Log to console for copy-paste
+    console.log('=== Detour 365 Episode - YouTube & Spotify Description ===\n' + descriptionTemplate.replace(/<br>/g, '\n').replace(/<\/?strong>/g, ''));
+
+    // Display in output
+    document.getElementById('templateOutput').innerHTML = descriptionTemplate;
+    document.getElementById('copyButton').style.display = 'block';
+});
+
+// Copy to clipboard
 document.getElementById('copyButton').addEventListener('click', function() {
-    const plainTemplate = localStorage.getItem('lastTemplate') || document.getElementById('templateOutput').textContent.replace(/<br>/g, '\n');
-    navigator.clipboard.writeText(plainTemplate).then(() => {
+    const plainText = document.getElementById('templateOutput').innerText.replace(/\n\s*\n/g, '\n').trim();
+    navigator.clipboard.writeText(plainText).then(() => {
         alert('Template copied to clipboard!');
     }).catch(err => {
         console.error('Failed to copy: ', err);
         alert('Failed to copy template. Please select and copy manually.');
     });
-});
-
-// Load saved template on page load
-window.addEventListener('load', function() {
-    const savedTemplate = localStorage.getItem('lastTemplate');
-    if (savedTemplate) {
-        const htmlTemplate = savedTemplate
-            .replace(/^Detour 365 - Episode.*$/m, '<strong>$&</strong>')
-            .replace(/^Date Recorded:.*$/m, '<strong>Date Recorded:</strong> $&'.replace('Date Recorded: ', ''))
-            .replace(/^Scripture Passages:.*$/m, '<strong>Scripture Passages:</strong> $&'.replace('Scripture Passages: ', ''))
-            .replace(/^Series:.*$/m, '<strong>Series:</strong> $&'.replace('Series: ', ''))
-            .replace(/^Theme:.*$/m, '<strong>Theme:</strong> $&'.replace('Theme: ', ''))
-            .replace(/^Hosts:.*$/m, '<strong>Hosts:</strong> $&'.replace('Hosts: ', ''))
-            .replace(/^Scriptures:.*$/m, '<strong>Scriptures:</strong> $&'.replace('Scriptures: ', ''))
-            .replace(/^Key Points:.*$/m, '<strong>Key Points:</strong><br>$&'.replace('Key Points: ', ''))
-            .replace(/^Closing Prayer:.*$/m, '<strong>Closing Prayer:</strong><br>$&'.replace('Closing Prayer: ', ''))
-            .replace(/^----------------------------------------$/m, '<strong>----------------------------------------</strong>')
-            .replace(/\n/g, '<br>'); // Convert newlines to <br> for HTML display
-        document.getElementById('templateOutput').innerHTML = htmlTemplate;
-        document.getElementById('copyButton').style.display = 'block';
-    }
 });

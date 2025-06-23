@@ -1,64 +1,55 @@
-/* styles.css */
 body {
     font-family: 'Arial', sans-serif;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f5f5ef; /* Light cream background */
+    background-color: #e8f0e4; /* Light green forest background */
+    color: #2f4f2f; /* Dark green text */
 }
 
 .container {
-    background-color: #fff;
-    padding: 30px;
+    background-color: #d3e0d1; /* Soft forest green */
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 100%;
+    gap: 20px;
     width: 100%;
     box-sizing: border-box;
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Georgia', serif;
-    color: #2F4F4F; /* Dark forest green */
+    color: #1a3c1a; /* Deep forest green */
     text-align: center;
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-top: 30px;
-}
+h1 { font-size: 2.5rem; margin-bottom: 15px; }
+h2 { font-size: 2rem; margin-top: 15px; }
+h3 { font-size: 1.5rem; margin-top: 10px; }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 label {
     font-weight: bold;
-    font-size: 2rem;
-    color: #333; /* Dark gray for readability */
+    font-size: 1rem;
     margin-bottom: 5px;
-    max-width: 50vw;
-    text-align: justify;
-    word-wrap: break-word; /* Ensures text wraps */
+    width: 100%;
 }
 
 input, textarea {
-    padding: 12px;
-    border: 1px solid #556B2F; /* Olive green border */
+    padding: 10px;
+    border: 1px solid #4a704a; /* Medium green border */
     border-radius: 5px;
-    font-size: 16px;
-    font-family: 'Arial', sans-serif;
-    width: 100%; /* Ensures full width within container */
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f0f5ef; /* Light wood texture */
 }
 
 textarea {
@@ -67,59 +58,75 @@ textarea {
 
 button {
     padding: 12px;
-    background-color: #2F4F4F; /* Dark forest green */
+    background-color: #355e3b; /* Forest green button */
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     transition: background-color 0.3s;
-    width: 100%; /* Ensures full width within container */
 }
 
 button:hover {
-    background-color: #1e3a3a; /* Darker green on hover */
+    background-color: #2a4b2e; /* Darker green on hover */
 }
 
 #output {
-    margin-top: 30px;
-    padding: 20px;
-    border: 1px solid #556B2F; /* Olive green border */
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #4a704a;
     border-radius: 5px;
-    background-color: #fafaf5; /* Very light cream */
-    max-width: 100%; /* Adjusted for flexibility */
-    width: 100%; /* Ensures full width */
-    text-align: justify;
+    background-color: #f0f5ef;
+    width: 100%;
     box-sizing: border-box;
 }
 
-pre#templateOutput {
+#templateOutput {
     font-family: 'Georgia', serif;
-    font-size: 16px;
-    white-space: pre-wrap; /* Allows wrapping of text */
-    background-color: #fff;
-    padding: 15px;
-    border: 1px solid #556B2F; /* Olive green border */
-    border-radius: 5px;
+    font-size: 1rem;
     line-height: 1.6;
-    color: #333; /* Dark gray text */
-    max-width: 100%; /* Ensures it fits the container */
-    width: 100%; /* Ensures full width */
-    overflow-wrap: break-word; /* Breaks long words */
-    word-break: break-word; /* Breaks words at word boundaries */
-    text-align: justify; /* Justifies text */
-    box-sizing: border-box; /* Includes padding in width calculation */
+    color: #1a3c1a;
+    padding: 10px;
+    border: 1px solid #4a704a;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: justify;
 }
 
-pre#templateOutput strong {
+#templateOutput strong {
     font-weight: bold;
-    color: #2F4F4F; /* Dark forest green for bold titles */
-    display: block; /* Ensures each strong element starts on a new line */
-    text-align: justify;
+    color: #355e3b;
+    display: block;
+    margin-bottom: 5px;
 }
 
 #copyButton {
     margin-top: 15px;
     width: 160px;
     display: none;
+}
+
+#checklist {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #4a704a;
+    border-radius: 5px;
+    background-color: #f0f5ef;
+}
+
+#checklist ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#checklist li {
+    padding: 5px 0;
+    color: #1a3c1a;
+}
+
+#checklist li:before {
+    content: "🌲 "; /* Tree emoji for checklist */
 }
