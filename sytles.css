@@ -3,12 +3,12 @@ body {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #e8f0e4; /* Light green forest background */
-    color: #2f4f2f; /* Dark green text */
+    background-color: darkgreen,  #0a1d00; /* dark forest background */
+    color: #d9ecd9; /* light green text */
 }
 
 .container {
-    background-color: #d3e0d1; /* Soft forest green */
+    background-color: darkgreen,  #d3e0d1; /* Soft forest green */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@ body {
 
 h1, h2, h3 {
     font-family: 'Georgia', serif;
-    color: #1a3c1a; /* Deep forest green */
+    color: #e1f5e1; 
     text-align: center;
 }
 
@@ -49,7 +49,7 @@ input, textarea {
     font-size: 1rem;
     width: 100%;
     box-sizing: border-box;
-    background-color: #f0f5ef; /* Light wood texture */
+    background-color: darkgreen,  darkgreen;
 }
 
 textarea {
@@ -58,7 +58,7 @@ textarea {
 
 button {
     padding: 12px;
-    background-color: #355e3b; /* Forest green button */
+    background-color: darkgreen,  #355e3b; /* Forest green button */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -68,7 +68,7 @@ button {
 }
 
 button:hover {
-    background-color: #2a4b2e; /* Darker green on hover */
+    background-color: darkgreen,  #2a4b2e; /* Darker green on hover */
 }
 
 #output {
@@ -76,7 +76,7 @@ button:hover {
     padding: 15px;
     border: 1px solid #4a704a;
     border-radius: 5px;
-    background-color: #f0f5ef;
+    background-color: darkgreen,  darkgreen;
     width: 100%;
     box-sizing: border-box;
 }
@@ -85,11 +85,11 @@ button:hover {
     font-family: 'Georgia', serif;
     font-size: 1rem;
     line-height: 1.6;
-    color: #1a3c1a;
+    color: #e0f9e0;
     padding: 10px;
     border: 1px solid #4a704a;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: darkgreen;
     width: 100%;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -98,7 +98,7 @@ button:hover {
 
 #templateOutput strong {
     font-weight: bold;
-    color: #355e3b;
+    color: white;
     display: block;
     margin-bottom: 5px;
 }
@@ -114,7 +114,7 @@ button:hover {
     padding: 15px;
     border: 1px solid #4a704a;
     border-radius: 5px;
-    background-color: #f0f5ef;
+    background-color: darkgreen;
 }
 
 #checklist ul {
@@ -124,7 +124,7 @@ button:hover {
 
 #checklist li {
     padding: 5px 0;
-    color: #1a3c1a;
+    color: white;
 }
 
 #checklist li:before {
